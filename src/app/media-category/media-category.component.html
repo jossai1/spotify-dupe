@@ -1,0 +1,6 @@
+<section>
+  <h2 class="media-category__title">{{mediaCategory.categoryName}}</h2>
+  <div class="media-category">
+    <app-media-tile [mediaTileData]="mediaTile" *ngFor="let mediaTile of mediaCategory.mediaTiles"></app-media-tile>
+  </div>
+</section>

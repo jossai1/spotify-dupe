@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  /*background: linear-gradient(to bottom, #380C0D, #121212);*/
+  /*!* Add vendor prefixes for broader browser support *!*/
+  /*background: -webkit-linear-gradient(to bottom, #380C0D, #121212);*/
+  /*background: -moz-linear-gradient(to bottom, #380C0D, #121212);*/
+  /*background: -o-linear-gradient(to bottom, #380C0D, #121212);*/
+  color: #FFFF;
+  font-family: sans-serif;
+}
+
+.centered {
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+
+section {
+  /*margin: 1rem;*/
+  /*padding: 1rem;*/
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.media-category__title {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.media-category {
+  display: flex;
+}
