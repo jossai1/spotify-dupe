@@ -40,8 +40,13 @@
   font-size: 1rem;
   padding-block-end: 4px;
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.hide-play-button{ visibility: hidden;}
+.hide-play-button {
+  visibility: hidden;
+}
 
-.show-play-button{ visibility: visible; transition: visibility 3s;}
+.show-play-button{ visibility: visible; transition: visibility .3s ease;}

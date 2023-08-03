@@ -7,10 +7,19 @@ section {
 }
 
 .media-category__title {
+  color: white;
+  text-decoration: none;
+}
+
+.media-category__title h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .media-category {
   display: flex;
+}
+
+.media-category__title:hover {
+  text-decoration: underline;
 }

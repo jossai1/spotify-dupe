@@ -14,7 +14,12 @@
   position: absolute;
   left: 91px;
   top: 99px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease; /* Adding a smooth transition on transform */
+}
+
+.pause-play-button:hover {
+  transform: scale(1.05);
 }
 
 /*positioning pause/play icon within button to be centered*/

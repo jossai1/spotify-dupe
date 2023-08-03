@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-media-tile',
@@ -6,6 +7,10 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./media-tile.component.css']
 })
 export class MediaTileComponent {
+
+  constructor(private router: Router) {
+    // this.route.params.subscribe( params => console.log(params) );
+  }
 
   @Input() mediaTileData: any;
 
@@ -17,5 +22,10 @@ export class MediaTileComponent {
 
   showPlayButton() {
     this.buttonClasses = ['show-play-button'];
+  }
+
+  // todo move to parent and use in last played tile and here - as a output
+  navigate() {
+    this.router.navigateByUrl(`/${this.mediaTileData.type}/${this.mediaTileData.id}`, { state: this.mediaTileData });
   }
 }

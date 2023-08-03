@@ -12,6 +12,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LastPlayedTilesComponent } from './last-played-tiles/last-played-tiles.component';
 import {CommonModule} from "@angular/common";
 import { PausePlayButtonComponent } from './pause-play-button/pause-play-button.component';
+import { MediaPageComponent } from './media-page/media-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PausePlayButtonComponent } from './pause-play-button/pause-play-button.
     MediaCategoryComponent,
     NavBarComponent,
     LastPlayedTilesComponent,
-    PausePlayButtonComponent
+    PausePlayButtonComponent,
+    MediaPageComponent
   ],
   imports: [
     BrowserModule,

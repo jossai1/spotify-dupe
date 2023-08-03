@@ -1,6 +1,9 @@
 .last-played-tiles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  /*grid-template: auto / repeat(auto-fill, minmax(25%, 1fr));*/
+  /*flex-wrap: wrap;*/
+  grid-template: auto/repeat(auto-fill,minmax(max(270px,25%),1fr));
+  grid-gap: 14px 24px;
+  /*justify-content: center;*/
+  /*align-items: center;*/
 }

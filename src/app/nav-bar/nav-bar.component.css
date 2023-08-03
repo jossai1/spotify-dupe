@@ -1,0 +1,47 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.navigation__left {
+  /*width: 300px;*/
+}
+
+.navigation__circular-button {
+  background-color: #0A0A0A;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*margin: 4px 10px;*/
+  /*font-size: inherit;*/
+  /*visibility: hidden;*/
+  /*transition: visibility 3ms;*/
+  transition: color 0.5s ease; /* Adding a smooth transition on transform */
+  inline-size: 48px;
+  block-size: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.navigation__circular-button:nth-child(2) {
+  margin-left: 1rem;
+}
+
+.navigation__circular-button:hover {
+  background-color: #050505;
+  transform: scale(1.05);
+}
+
+.navigation__right {
+  display: flex;
+  /*justify-content: space-around;*/
+}
+
+.navigation__avatar {
+  width: 48px;
+  border-radius: 50%;
+}

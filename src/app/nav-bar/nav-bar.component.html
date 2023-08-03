@@ -1,1 +1,15 @@
-<p>nav-bar works!</p>
+<div class="navigation" role="navigation">
+  <div class="navigation__left">
+    <button title="Go Back" class="navigation__circular-button" [class]="isHomePage() ? 'disabled' : '' "><</button>
+    <button title="Go Forward" class="navigation__circular-button"> > </button>
+  </div>
+
+  <div class="navigation__right">
+    <button title="Friend Activity" class="navigation__circular-button">
+      👥
+    </button>
+    <button [title]="username" class="navigation__circular-button">
+      <img class="navigation__avatar" src="./assets/images/album-art/anita-baker.jpeg" alt="">
+    </button>
+  </div>
+</div>

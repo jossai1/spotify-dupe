@@ -1,20 +1,26 @@
-<div class="container">
-  <header class="header">
-    <h1 class="header__title">
-      Good {{timeOfDay()}}
-    </h1>
-    <app-last-played-tiles class="last-played-container" [lastPlayedMedia]=lastPlayedMedia ></app-last-played-tiles>
-  </header>
+<div class="HsbczDqu9qjcYr7EIdHR">
+  <app-nav-bar ></app-nav-bar>
 
-  <main>
-    <div class="media-by-categories">
+  <div class="container">
+
+    <header class="header">
+      <h1 class="header__title">
+        Good {{timeOfDay()}}
+      </h1>
+      <app-last-played-tiles class="last-played-container" [lastPlayedMedia]=lastPlayedMedia ></app-last-played-tiles>
+    </header>
+
+    <main>
+      <div class="media-by-categories">
         <div class="media__category-sections">
           <app-media-category *ngFor="let mediaCategory of mediaCategories" [mediaCategory]="mediaCategory"></app-media-category>
         </div>
-    </div>
+      </div>
 
-    <div class="media-player">
-    </div>
+      <div class="media-player">
+      </div>
 
-  </main>
+    </main>
+  </div>
+
 </div>

@@ -1,0 +1,19 @@
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.header {
+  display: flex;
+  /*flex-direction: row;*/
+  justify-content: flex-start;
+}
+
+.header__metadata {
+  margin-left: 1rem;
+}
+
+.header__metadata-media-name {
+  margin: 1rem 0 1rem 0;
+  /*padding: 1rem;*/
+}

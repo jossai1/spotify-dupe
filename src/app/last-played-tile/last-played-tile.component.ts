@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-last-played-tile',
@@ -6,18 +7,28 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./last-played-tile.component.css']
 })
 export class LastPlayedTileComponent {
-
   @Input() lastPlayed: any;
-  buttonClasses: string[] = ['last-played-tile__play-button'];
+  @Output() lastPlayedClicked = new EventEmitter<any>();
+
+  constructor(private router: Router) {}
+
+  buttonClasses: string[] = ['hide-play-button'];
 
   hidePlayButton() {
-    if (!this.lastPlayed.playing) {
-      this.buttonClasses = this.buttonClasses.filter(className => className === 'last-played-tile__play-button');
-    }
+    this.buttonClasses = ['hide-play-button']
+  }
+
+  pausePlayToggle() {
+    // emit event to parent with the media that has just been clicked
+    this.lastPlayedClicked.emit(this.lastPlayed);
   }
 
   showPlayButton() {
+    this.buttonClasses = ['show-play-button'];
+  }
 
-    this.buttonClasses = [...['show-play-button'], ...this.buttonClasses];
+  // todo move to parent and use in media tile and here - as a output
+  navigate() {
+    this.router.navigateByUrl(`/${this.lastPlayed.type}/${this.lastPlayed.id}`, { state: this.lastPlayed });
   }
 }
