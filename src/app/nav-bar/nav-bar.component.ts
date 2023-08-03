@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import {SharedService} from "../services/shared.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,14 +9,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  @Input() username:string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private location: Location, private sharedService: SharedService) {}
 
-  ngOnInit() {
-    console.log(this.router.url)
-  }
+  username:string = this.sharedService.getUsername();
+
   isHomePage() {
-    return false;
-  };
+    return this.router.url === '/';
+  }
+
+  goForward() {
+    this.location.forward();
+  }
+
+  goBack() {
+    //prevent going back on home page - nowhere to go
+    if (!this.isHomePage()) {
+      this.location.back();
+    }
+  }
 }

@@ -13,6 +13,7 @@ import { LastPlayedTilesComponent } from './last-played-tiles/last-played-tiles.
 import {CommonModule} from "@angular/common";
 import { PausePlayButtonComponent } from './pause-play-button/pause-play-button.component';
 import { MediaPageComponent } from './media-page/media-page.component';
+import {SharedService} from "./services/shared.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { MediaPageComponent } from './media-page/media-page.component';
     AppRoutingModule,
     CommonModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

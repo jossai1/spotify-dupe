@@ -1,7 +1,7 @@
 .navigation {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 2rem 0 2rem;
+  padding: 1rem 2rem 0 2rem;
 }
 
 .navigation__left {
@@ -21,10 +21,15 @@
   /*visibility: hidden;*/
   /*transition: visibility 3ms;*/
   transition: color 0.5s ease; /* Adding a smooth transition on transform */
-  inline-size: 48px;
-  block-size: 48px;
+  inline-size: 30px;
+  block-size: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+.navigation__circular-button svg {
+  fill: white;
+  margin-top: 0.3rem;
 }
 
 .navigation__circular-button:nth-child(2) {
@@ -41,7 +46,12 @@
   /*justify-content: space-around;*/
 }
 
+.disabled {
+  cursor:not-allowed;
+  opacity: .5;
+}
+
 .navigation__avatar {
-  width: 48px;
+  width: 100%;
   border-radius: 50%;
 }
