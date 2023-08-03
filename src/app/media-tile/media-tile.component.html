@@ -1,9 +1,9 @@
-<article (click)="navigate()" class="media-tile" (mouseenter)="showPlayButton()" (mouseleave)="hidePlayButton()">
+<article class="media-tile" (mouseenter)="showPlayButton()" (mouseleave)="hidePlayButton()">
    <div class="media-tile__image-container">
      <img [src]="mediaTileData.coverArtImgSrc" alt="">
      <app-pause-play-button class="button" [class]="mediaTileData.playing ? ['show-play-button'] : buttonClasses"  [playing]="mediaTileData.playing"></app-pause-play-button>
    </div>
-  <div class="media-tile__text-container">
+  <div  (click)="navigate()" class="media-tile__text-container">
     <p class="media-tile_title">{{mediaTileData.name}}</p>
     <p class="media-tile__description">{{mediaTileData.description}}</p>
   </div>

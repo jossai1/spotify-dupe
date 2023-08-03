@@ -1,5 +1,5 @@
-<article (click)="navigate()" class="last-played-tile" (mouseenter)="showPlayButton()" (mouseleave)="hidePlayButton()">
-  <div class="last-played-tile__image-container">
+<article class="last-played-tile" (mouseenter)="showPlayButton()" (mouseleave)="hidePlayButton()">
+  <div (click)="navigate()" class="last-played-tile__image-container">
     <img class="last-played-tile__image" [src]="lastPlayed.coverArtImgSrc" alt="">
   </div>
   <div class="last-played-tile__info">
