@@ -1,6 +1,6 @@
 <article class="last-played-tile" (mouseenter)="showPlayButton()" (mouseleave)="hidePlayButton()">
   <div (click)="navigate()" class="last-played-tile__image-container">
-    <img class="last-played-tile__image" [src]="lastPlayed.coverArtImgSrc" alt="">
+    <img class="last-played-tile__image" [src]="lastPlayed.coverArt.imgSrc" alt="">
   </div>
   <div class="last-played-tile__info">
     <p> {{lastPlayed.name}} </p>

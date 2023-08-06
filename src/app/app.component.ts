@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SharedService} from "./services/shared.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spotify-dupe';
+  sharedService: SharedService;
+
+  constructor(sharedService: SharedService) {
+    this.sharedService = sharedService;
+  }
+
 }

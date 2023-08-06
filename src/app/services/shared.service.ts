@@ -8,13 +8,27 @@ export class SharedService {
   constructor() {}
 
   username: string = 'FierceBlackNerd';
+  defaultBgColor: string = 'rgb(224, 40, 40)';
+  gradientBackgroundColor: string = this.defaultBgColor;
 
   getUsername(): string {
     return this.username;
   }
 
-  setUsername(): string {
-    return this.username;
+
+  getDefaultBgColor() {
+    return this.defaultBgColor;
+  }
+  setUsername(username: string) {
+    this.username = username;
+  }
+
+  setGradientBackgroundColor(bgColor: string) {
+    this.gradientBackgroundColor = bgColor;
+  }
+
+  getGradientBackgroundColor() {
+    return this.gradientBackgroundColor;
   }
 
   getMediaCategories() {
@@ -227,7 +241,7 @@ export class SharedService {
       {
         id: '1',
         name: 'Alte vybz',
-        coverArtImgSrc: '../assets/images/album-art/Burna-Boy-5th-Album-Cover-Art.jpg',
+        coverArt: {imgSrc: '../assets/images/album-art/Burna-Boy-5th-Album-Cover-Art.jpg', mainColor: '#E6B358'},
         url: '',
         playing: false,
         type: 'playlist'
@@ -235,7 +249,7 @@ export class SharedService {
       {
         name: 'Work of art',
         artistName: 'Asake',
-        coverArtImgSrc: '/assets/images/album-art/Asake-Work-of-Art.webp',
+        coverArt: {imgSrc: '/assets/images/album-art/Asake-Work-of-Art.webp', mainColor: '#C02305'},
         url: '',
         playing: false,
         type: 'album'
@@ -243,7 +257,7 @@ export class SharedService {
       {
         id: '2',
         name: 'Oldies',
-        coverArtImgSrc: '/assets/images/album-art/Burna_Boy_-_Outside_album_cover.jpg',
+        coverArt: {imgSrc: '/assets/images/album-art/Burna_Boy_-_Outside_album_cover.jpg', mainColor: '#78D8F1'},
         url: '',
         playing: false,
         type: 'playlist'
@@ -251,7 +265,7 @@ export class SharedService {
       {
         id: '3',
         name: 'R&B',
-        coverArtImgSrc: '/assets/images/album-art/anita-baker.jpeg',
+        coverArt: {imgSrc: '/assets/images/album-art/anita-baker.jpeg', mainColor: '#9A7295'},
         url: '',
         playing: false,
         type: 'playlist'
@@ -259,7 +273,7 @@ export class SharedService {
       {
         id: '4',
         name: 'Afrobeats',
-        coverArtImgSrc: '/assets/images/album-art/Burna_Boy_-_African_Giant.png',
+        coverArt: {imgSrc: '/assets/images/album-art/Burna_Boy_-_African_Giant.png', mainColor: '#CF8B74'},
         url: '',
         playing: false,
         type: 'playlist'
@@ -267,7 +281,7 @@ export class SharedService {
       {
         id: '5',
         name: 'Jazmine Sullivan',
-        coverArtImgSrc: '/assets/images/album-art/Heaux Tales_Jazmine Sullivan.webp',
+        coverArt: {imgSrc: '/assets/images/album-art/Heaux Tales_Jazmine Sullivan.webp', mainColor: '#D2F73C'},
         url: '',
         playing: true,
         type: 'album'

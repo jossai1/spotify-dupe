@@ -1,4 +1,4 @@
-<div class="gradient-bg">
+<div class="gradient-bg" [style.background-color]="sharedService.getGradientBackgroundColor()">
   <app-nav-bar ></app-nav-bar>
   <router-outlet></router-outlet>
 </div>
