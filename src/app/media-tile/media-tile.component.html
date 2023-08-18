@@ -1,6 +1,6 @@
 <article class="media-tile" (mouseenter)="showPlayButton()" (mouseleave)="hidePlayButton()">
    <div class="media-tile__image-container">
-     <img [src]="mediaTileData.coverArtImgSrc" alt="">
+     <img [src]="mediaTileData.coverArt.imgSrc" alt="">
      <app-pause-play-button class="button" [class]="mediaTileData.playing ? ['show-play-button'] : buttonClasses"  [playing]="mediaTileData.playing"></app-pause-play-button>
    </div>
   <div  (click)="navigate()" class="media-tile__text-container">

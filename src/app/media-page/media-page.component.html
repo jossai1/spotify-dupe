@@ -1,26 +1,31 @@
 <div class="container header">
   <div>
-    <img [src]="media.coverArtImgSrc" alt="">
+    <img [src]="media.coverArt.imgSrc" alt="">
   </div>
   <div class="header__metadata">
-    <small class="header__metadata-details" *ngIf="media.type === 'playlist'">{{media.privacy ? media.privacy : 'Public'}} {{media.type}}</small>
-    <small class="header__metadata-details" *ngIf="media.type === 'show'">Podcast Episode</small>
-    <small class="header__metadata-details" *ngIf="media.type === 'album'">{{media.type}}</small>
+    <small class="header__metadata-details" *ngIf="media.type === playlistType">{{media.privacy ? media.privacy : 'Public'}} {{media.type}}</small>
+    <small class="header__metadata-details" *ngIf="media.type === showType">Podcast Episode</small>
+    <small class="header__metadata-details" *ngIf="media.type === albumType">{{media.type}}</small>
     <h1 class="header__metadata-media-name">{{media.name}}</h1>
     <em>{{media.description}}</em>
     <div [ngSwitch]="media.type">
-      <div *ngSwitchCase="'playlist'">
+      <div *ngSwitchCase=playlistType>
         <small class="header__metadata-details"> 🎵 Made for FierceBlackNerd - 50 songs, 2hrs 39 min </small>
       </div>
-      <div *ngSwitchCase="'show'">
+      <div *ngSwitchCase=showType>
         <h5> {{media.fullShowName}} </h5>
       </div>
-      <div *ngSwitchCase="'album'">
+      <div *ngSwitchCase=albumType>
         <small class="header__metadata-details"> {{media.artistName}} </small>
       </div>
       <div *ngSwitchDefault>
         <small class="header__metadata-details"> {{media.name}} </small>
       </div>
     </div>
+    <section *ngIf="cocktail">
+      <h2>🍹 We think a "{{cocktail.drinks[0].strDrink}}" would be the perfect accompaniment to this {{media.type.toLowerCase()}}</h2>
+      <img [src]="cocktail.drinks[0].strDrinkThumb" alt="">
+      <p><strong>How to make: </strong>{{cocktail.drinks[0].strInstructions}} </p>
+    </section>
   </div>
 </div>

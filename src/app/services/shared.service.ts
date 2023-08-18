@@ -1,11 +1,16 @@
 import {Injectable} from '@angular/core';
+import {LastPlayed} from "../models/last-played.model";
+import {MediaTileType} from "../models/media-type.types";
+import {MediaCategory} from "../models/media-category.model";
+import { HttpClient } from  '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   username: string = 'FierceBlackNerd';
   defaultBgColor: string = 'rgb(224, 40, 40)';
@@ -15,10 +20,10 @@ export class SharedService {
     return this.username;
   }
 
-
   getDefaultBgColor() {
     return this.defaultBgColor;
   }
+
   setUsername(username: string) {
     this.username = username;
   }
@@ -31,212 +36,217 @@ export class SharedService {
     return this.gradientBackgroundColor;
   }
 
-  getMediaCategories() {
+  getRandomCocktail(): Observable<any> {
+    const url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+    return this.http.get(url);
+  }
+
+  getMediaCategories(): MediaCategory[] {
     return [
       {
-        categoryName: `Made for ${this.username}`, type: 'DailyMixes', mediaTiles: [
+        categoryName: `Made for ${this.username}`, type: MediaTileType.DAILY_MIXES, mediaTiles: [
           {
             id: '6',
             name: 'Daily Mix 1',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type:  MediaTileType.PLAYLIST
           },
           {
             id: '7',
             name: 'Daily Mix 2',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '8',
             name: 'Daily Mix 3',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '9',
             name: 'Daily Mix 4',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '10',
             name: 'Daily Mix 5',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '11',
             name: 'Daily Mix 6',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '12',
             name: 'Daily Mix 7',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '13',
             name: 'Daily Mix 8',
-            coverArtImgSrc: '/assets/images/album-art/daily-mix.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/daily-mix.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
         ]
       },
       {
-        categoryName: `Episodes for you`, type: 'Podcasts', mediaTiles: [
+        categoryName: `Episodes for you`, type: MediaTileType.PODCASTS, mediaTiles: [
           {
             id: '14',
             name: 'ISWIS SE05EP23The "Cool Mum" Episode ft. Chinyere, Folusho & Mfonabasi',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: '26th July - 199 mins',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '15',
             name: 'ISWIS SE05EP23The "Cool Mum" Episode ft. Chinyere, Folusho & Mfonabasi',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: '26th July - 199 mins',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '16',
             name: 'ISWIS SE05EP23The "Cool Mum" Episode ft. Chinyere, Folusho & Mfonabasi',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: '26th July - 199 mins',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '17',
             name: 'ISWIS SE05EP23The "Cool Mum" Episode ft. Chinyere, Folusho & Mfonabasi',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: '26th July - 199 mins',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '18',
             name: 'ISWIS SE05EP23The "Cool Mum" Episode ft. Chinyere, Folusho & Mfonabasi',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: '26th July - 199 mins',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '19',
             name: 'Daily Motion',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '20',
             name: 'TechCrunch',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
           {
             id: '21',
             name: 'FBN Slayers',
-            coverArtImgSrc: '/assets/images/album-art/iswis.jpeg',
+            coverArt: {imgSrc: '/assets/images/album-art/iswis.jpeg'},
             url: '',
             playing: false,
             description: 'Asake, Lojay, Chris Brown',
-            type: 'show',
+            type: MediaTileType.SHOW,
             fullShowName: 'I Said What I Said'
           },
         ]
       },
       {
-        categoryName: `Your Playlists`, type: 'Playlists', mediaTiles: [
+        categoryName: `Your Playlists`, type: MediaTileType.PLAYLISTS, mediaTiles: [
           {
             id: '22',
             name: 'Alte',
-            coverArtImgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png',
+            coverArt: {imgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png'},
             url: '',
             playing: false,
             description: `By ${this.username}`,
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '23',
             name: 'Oldies',
-            coverArtImgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png',
+            coverArt: {imgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png'},
             url: '',
             playing: false,
             description: `By ${this.username}`,
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '24',
             name: 'Hip-Hop',
-            coverArtImgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png',
+            coverArt: {imgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png'},
             url: '',
             playing: false,
             description: `By ${this.username}`,
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           },
           {
             id: '25',
             name: 'Naija',
-            coverArtImgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png',
+            coverArt: {imgSrc: '/assets/images/album-art/Wizkid_-_Made_in_Lagos.png'},
             url: '',
             playing: false,
             description: `By ${this.username}`,
-            type: 'playlist'
+            type: MediaTileType.PLAYLIST
           }
         ]
       }
     ];
   }
 
-  getLastPlayedData() {
+  getLastPlayedData(): LastPlayed[] {
     return [
       {
         id: '1',
@@ -244,15 +254,16 @@ export class SharedService {
         coverArt: {imgSrc: '../assets/images/album-art/Burna-Boy-5th-Album-Cover-Art.jpg', mainColor: '#E6B358'},
         url: '',
         playing: false,
-        type: 'playlist'
+        type: MediaTileType.PLAYLIST
       },
       {
+        id: '6',
         name: 'Work of art',
         artistName: 'Asake',
         coverArt: {imgSrc: '/assets/images/album-art/Asake-Work-of-Art.webp', mainColor: '#C02305'},
         url: '',
         playing: false,
-        type: 'album'
+        type: MediaTileType.ALBUM
       },
       {
         id: '2',
@@ -260,7 +271,7 @@ export class SharedService {
         coverArt: {imgSrc: '/assets/images/album-art/Burna_Boy_-_Outside_album_cover.jpg', mainColor: '#78D8F1'},
         url: '',
         playing: false,
-        type: 'playlist'
+        type: MediaTileType.PLAYLIST
       },
       {
         id: '3',
@@ -268,7 +279,7 @@ export class SharedService {
         coverArt: {imgSrc: '/assets/images/album-art/anita-baker.jpeg', mainColor: '#9A7295'},
         url: '',
         playing: false,
-        type: 'playlist'
+        type: MediaTileType.PLAYLIST
       },
       {
         id: '4',
@@ -276,15 +287,16 @@ export class SharedService {
         coverArt: {imgSrc: '/assets/images/album-art/Burna_Boy_-_African_Giant.png', mainColor: '#CF8B74'},
         url: '',
         playing: false,
-        type: 'playlist'
+        type: MediaTileType.PLAYLIST
       },
       {
         id: '5',
-        name: 'Jazmine Sullivan',
+          name: 'Heaux Tales',
+        artistName: 'Jazmine Sullivan',
         coverArt: {imgSrc: '/assets/images/album-art/Heaux Tales_Jazmine Sullivan.webp', mainColor: '#D2F73C'},
         url: '',
         playing: true,
-        type: 'album'
+        type: MediaTileType.ALBUM
       },
     ];
   }

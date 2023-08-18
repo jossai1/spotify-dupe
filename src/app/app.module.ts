@@ -14,6 +14,7 @@ import {CommonModule} from "@angular/common";
 import { PausePlayButtonComponent } from './pause-play-button/pause-play-button.component';
 import { MediaPageComponent } from './media-page/media-page.component';
 import {SharedService} from "./services/shared.service";
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {SharedService} from "./services/shared.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

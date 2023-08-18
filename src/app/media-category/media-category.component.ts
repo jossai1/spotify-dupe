@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {MediaCategory} from "../models/media-category.model";
 
 @Component({
   selector: 'app-media-category',

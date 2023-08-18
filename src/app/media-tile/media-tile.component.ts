@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Router} from "@angular/router";
+import {MediaTile} from "../models/media-tile.model";
 
 @Component({
   selector: 'app-media-tile',
@@ -26,6 +27,6 @@ export class MediaTileComponent {
 
   // todo move to parent and use in last played tile and here - as a output
   navigate() {
-    this.router.navigateByUrl(`/${this.mediaTileData.type}/${this.mediaTileData.id}`, { state: this.mediaTileData });
+    this.router.navigateByUrl(`/${this.mediaTileData.type.toLowerCase()}/${this.mediaTileData.id}`, { state: this.mediaTileData });
   }
 }

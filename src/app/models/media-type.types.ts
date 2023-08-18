@@ -1,0 +1,8 @@
+export enum MediaTileType {
+  PLAYLIST= 'PLAYLIST',
+  SHOW = 'SHOW',
+  ALBUM = 'ALBUM',
+  DAILY_MIXES = 'DAILY MIXES',
+  PLAYLISTS = 'PLAYLISTS',
+  PODCASTS = 'PODCASTS',
+}

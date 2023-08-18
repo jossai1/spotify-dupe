@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, Input, QueryList, ViewChildren} from '@angular/core';
 import {LastPlayedTileComponent} from "../last-played-tile/last-played-tile.component";
+import {LastPlayed} from "../models/last-played.model";
 
 @Component({
   selector: 'app-last-played-tiles',
@@ -8,14 +9,14 @@ import {LastPlayedTileComponent} from "../last-played-tile/last-played-tile.comp
 })
 export class LastPlayedTilesComponent implements AfterViewInit{
   //passed in as prop
-  @Input() lastPlayedMedia: any[]  = [];
+  @Input() lastPlayedMedia: LastPlayed[]  = [];
 
   @ViewChildren(LastPlayedTileComponent) lastPlayedTilesComponent: QueryList<LastPlayedTileComponent> = new QueryList<LastPlayedTileComponent>();
   // @ViewChildren(LastPlayedTileComponent) public lastPlayedTilesComponentRefs: ElementRef<LastPlayedTileComponent>;
   // @ViewChildren('childRef') childComponents: QueryList<LastPlayedTileComponent>;
 
   // play one song from list..only one song can play at a time
-  playOneMediaFromListOfLastPlayed(mediaToPlay: any) {
+  playOneMediaFromListOfLastPlayed(mediaToPlay: LastPlayed) {
     // toggle the state of the selected media
     mediaToPlay.playing ? mediaToPlay.playing  = false : mediaToPlay.playing = true;
 
@@ -42,6 +43,5 @@ export class LastPlayedTilesComponent implements AfterViewInit{
     }
 
   }
-
 
 }

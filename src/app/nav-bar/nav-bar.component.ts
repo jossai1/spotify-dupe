@@ -12,7 +12,7 @@ export class NavBarComponent {
 
   constructor(private router: Router, private location: Location, private sharedService: SharedService) {}
 
-  username:string = this.sharedService.getUsername();
+  username: string = this.sharedService.getUsername();
 
   isHomePage() {
     return this.router.url === '/';
